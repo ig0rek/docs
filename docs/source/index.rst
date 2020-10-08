@@ -8,7 +8,6 @@ Texas hold 'em
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
    content/table_join
    content/game_start
@@ -20,4 +19,3 @@ Indices and tables
 
 * :ref:`genindex`
 
- 
