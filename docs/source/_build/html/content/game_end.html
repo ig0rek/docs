@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Конец игры &#8212; документация MGDocs 1</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="../genindex.html" />
+    <link rel="search" title="Поиск" href="../search.html" />
+    <link rel="prev" title="Ход игрока" href="game_move.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>Конец игры<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Сразу после последнего хода в центрифугу прилетит сообщение о завершении игры с результатами.</p>
+<p><strong>Ответ от сервера:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;board&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;cards&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;S6&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;CJ&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;SA&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;H10&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;DK&quot;</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;players&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">345345</span><span class="p">,</span>
+                    <span class="s2">&quot;chips&quot;</span><span class="p">:</span> <span class="mi">50000</span><span class="p">,</span>
+                    <span class="s2">&quot;place&quot;</span><span class="p">:</span> <span class="mi">0</span>
+                <span class="p">},</span>
+                <span class="s2">&quot;award&quot;</span><span class="p">:</span> <span class="mi">125</span><span class="p">,</span> <span class="o">//</span> <span class="p">(</span><span class="o">*</span> <span class="n">указывается</span> <span class="n">только</span> <span class="n">если</span><span class="p">)</span> <span class="n">игрок</span> <span class="n">победил</span> <span class="n">и</span> <span class="n">получил</span> <span class="n">фишки</span>
+                <span class="s2">&quot;cards&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="o">//</span> <span class="p">(</span><span class="o">*</span> <span class="n">указывается</span> <span class="n">только</span> <span class="n">если</span><span class="p">)</span> <span class="n">все</span> <span class="n">игроки</span> <span class="n">дошли</span> <span class="n">до</span> <span class="n">конца</span> <span class="n">игры</span> <span class="n">и</span> <span class="n">выбор</span> <span class="n">победителя</span> <span class="n">был</span> <span class="n">по</span> <span class="n">результатам</span> <span class="n">карт</span>
+                    <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;HA&quot;</span>
+                <span class="p">],</span>
+                <span class="s2">&quot;combination&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="o">//</span> <span class="p">(</span><span class="o">*</span> <span class="n">указывается</span> <span class="n">только</span> <span class="n">если</span><span class="p">)</span> <span class="n">все</span> <span class="n">игроки</span> <span class="n">дошли</span> <span class="n">до</span> <span class="n">конца</span> <span class="n">игры</span> <span class="n">и</span> <span class="n">выбор</span> <span class="n">победителя</span> <span class="n">был</span> <span class="n">по</span> <span class="n">результатам</span> <span class="n">карт</span>
+                    <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;SA&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;HA&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;DK&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;CJ&quot;</span>
+                <span class="p">]</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">456455</span><span class="p">,</span>
+                    <span class="s2">&quot;chips&quot;</span><span class="p">:</span> <span class="mi">38000</span><span class="p">,</span>
+                    <span class="s2">&quot;place&quot;</span><span class="p">:</span> <span class="mi">1</span>
+                <span class="p">},</span>
+                <span class="s2">&quot;cards&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s2">&quot;H2&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;SQ&quot;</span>
+                <span class="p">]</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">145344</span><span class="p">,</span>
+                    <span class="s2">&quot;chips&quot;</span><span class="p">:</span> <span class="mi">43000</span><span class="p">,</span>
+                    <span class="s2">&quot;place&quot;</span><span class="p">:</span> <span class="mi">2</span>
+                <span class="p">},</span>
+                <span class="s2">&quot;cards&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s2">&quot;D10&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;S9&quot;</span>
+                <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">MGDocs</a></h1>
+
+
+
+
+
+
+
+
+<h3>Навигация</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="table_join.html">Присоединение к столу</a></li>
+<li class="toctree-l1"><a class="reference internal" href="game_start.html">Старт игры</a></li>
+<li class="toctree-l1"><a class="reference internal" href="game_move.html">Ход игрока</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Конец игры</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="game_move.html" title="предыдущая глава">Ход игрока</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Igor Kolobov.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/content/game_end.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

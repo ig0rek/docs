@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ход игрока &#8212; документация MGDocs 1</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="../genindex.html" />
+    <link rel="search" title="Поиск" href="../search.html" />
+    <link rel="next" title="Конец игры" href="game_end.html" />
+    <link rel="prev" title="Старт игры" href="game_start.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>Ход игрока<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+<p>Каждый игрок делает запрос «ход текущего игрока».</p>
+<p><strong>Запрос к серверу:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;move&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="o">//</span> <span class="n">номер</span> <span class="n">текущего</span> <span class="n">хода</span>
+    <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;fold|check|call|raise|all-in&quot;</span><span class="p">,</span> <span class="o">//</span> <span class="n">тип</span> <span class="n">хода</span>
+        <span class="s2">&quot;bet&quot;</span><span class="p">:</span> <span class="mi">250</span> <span class="o">//</span> <span class="n">указывается</span> <span class="n">только</span> <span class="n">если</span> <span class="n">тип</span> <span class="n">хода</span> <span class="s2">&quot;raise&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Ответ от сервера:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;move&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="o">//</span> <span class="n">номер</span> <span class="n">текущего</span> <span class="n">хода</span>
+    <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;bank&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="mi">75</span><span class="p">,</span> <span class="o">//</span> <span class="n">общая</span> <span class="n">ставка</span> <span class="n">за</span> <span class="n">все</span> <span class="n">ходы</span>
+            <span class="s2">&quot;current&quot;</span><span class="p">:</span> <span class="mi">50</span> <span class="o">//</span> <span class="n">ставка</span> <span class="n">за</span> <span class="n">текущий</span> <span class="n">этап</span> <span class="n">игры</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;board&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;cards&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="o">//</span> <span class="n">карты</span> <span class="n">на</span> <span class="n">столе</span>
+                <span class="s2">&quot;S6&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;CJ&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;SA&quot;</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;players&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">345345</span><span class="p">,</span>
+                    <span class="s2">&quot;chips&quot;</span><span class="p">:</span> <span class="mi">50000</span><span class="p">,</span> <span class="o">//</span> <span class="n">всего</span> <span class="n">фишек</span> <span class="n">у</span> <span class="n">данного</span> <span class="n">пользователя</span> <span class="n">в</span> <span class="n">игре</span>
+                    <span class="s2">&quot;place&quot;</span><span class="p">:</span> <span class="mi">0</span> <span class="o">//</span> <span class="n">место</span> <span class="n">за</span> <span class="n">столом</span>
+                <span class="p">},</span>
+                <span class="s2">&quot;game&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;bet&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="o">//</span> <span class="n">ставка</span> <span class="n">игрока</span> <span class="n">за</span> <span class="n">данный</span> <span class="n">этап</span> <span class="n">игры</span>
+                    <span class="s2">&quot;isDealer&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="o">//</span> <span class="p">(</span><span class="o">*</span> <span class="n">указывается</span> <span class="n">только</span> <span class="n">если</span><span class="p">)</span> <span class="n">пользователь</span> <span class="n">является</span> <span class="n">дилером</span> <span class="n">в</span> <span class="n">данной</span> <span class="n">игре</span>
+                    <span class="s2">&quot;typeMove&quot;</span><span class="p">:</span> <span class="s2">&quot;raise&quot;</span> <span class="o">//</span> <span class="p">(</span><span class="o">*</span> <span class="n">указывается</span> <span class="n">только</span> <span class="n">если</span><span class="p">)</span> <span class="n">игрок</span> <span class="n">сделал</span> <span class="n">ход</span><span class="p">,</span> <span class="n">тип</span> <span class="n">хода</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">456455</span><span class="p">,</span>
+                    <span class="s2">&quot;chips&quot;</span><span class="p">:</span> <span class="mi">38000</span><span class="p">,</span>
+                    <span class="s2">&quot;place&quot;</span><span class="p">:</span> <span class="mi">1</span>
+                <span class="p">},</span>
+                <span class="s2">&quot;game&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;bet&quot;</span><span class="p">:</span> <span class="mi">0</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">145344</span><span class="p">,</span>
+                    <span class="s2">&quot;chips&quot;</span><span class="p">:</span> <span class="mi">43000</span><span class="p">,</span>
+                    <span class="s2">&quot;place&quot;</span><span class="p">:</span> <span class="mi">2</span>
+                <span class="p">},</span>
+                <span class="s2">&quot;game&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;bet&quot;</span><span class="p">:</span> <span class="mi">0</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;game&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;move&quot;</span><span class="p">:</span> <span class="mi">456455</span><span class="p">,</span> <span class="o">//</span> <span class="nb">id</span> <span class="n">пользователя</span><span class="p">,</span> <span class="n">чей</span> <span class="n">ход</span> <span class="n">следующий</span><span class="o">.</span> <span class="p">(</span><span class="o">*</span> <span class="n">указывается</span> <span class="n">только</span> <span class="n">если</span><span class="p">)</span> <span class="n">не</span> <span class="n">указан</span> <span class="n">параметр</span> <span class="s2">&quot;isFinish&quot;</span>
+            <span class="s2">&quot;prevMove&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;userId&quot;</span><span class="p">:</span> <span class="mi">456455</span><span class="p">,</span> <span class="o">//</span> <span class="nb">id</span> <span class="n">пользователя</span> <span class="n">предыдущего</span> <span class="n">игрока</span>
+                <span class="s2">&quot;typeMove&quot;</span><span class="p">:</span> <span class="s2">&quot;call&quot;</span> <span class="o">//</span> <span class="n">тип</span> <span class="n">хода</span> <span class="n">предыдущего</span> <span class="n">игрока</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;isChangedStage&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="o">//</span> <span class="p">(</span><span class="o">*</span> <span class="n">указывается</span> <span class="n">только</span> <span class="n">если</span><span class="p">)</span> <span class="n">произошла</span> <span class="n">смена</span> <span class="n">этапа</span> <span class="n">игры</span>
+            <span class="s2">&quot;isFinish&quot;</span><span class="p">:</span> <span class="n">true</span> <span class="o">//</span> <span class="p">(</span><span class="o">*</span> <span class="n">указывается</span> <span class="n">только</span> <span class="n">если</span><span class="p">)</span> <span class="n">это</span> <span class="n">был</span> <span class="n">последний</span> <span class="n">ход</span> <span class="n">в</span> <span class="n">данной</span> <span class="n">игре</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Все игроки ходят по кругу.</p>
+<p>Если игрок сбросил карты <code class="docutils literal notranslate"><span class="pre">flop</span></code>, то в ответе от сервера в <code class="docutils literal notranslate"><span class="pre">data.players</span></code> его уже не будет. Информация по нему будет только в инфе о ходе предыдущего игрока <code class="docutils literal notranslate"><span class="pre">data.game.prevMove</span></code>.</p>
+<p>Когда последний игрок сделает ход - новый этап игры:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>выкладываются новые карты на стол (data.board.cards)</p></li>
+<li><p>фишки текущего этапа <code class="docutils literal notranslate"><span class="pre">data.bank.current</span></code> добавляются в общий банк <code class="docutils literal notranslate"><span class="pre">data.bank.total</span></code></p></li>
+<li><p>задаётся флаг о смене этапа игры (data.game.isChangedStage)</p></li>
+</ul>
+</div></blockquote>
+<p>Если в ответе есть <code class="docutils literal notranslate"><span class="pre">data.game.isFinish</span></code>, то данный ход был последним.</p>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">MGDocs</a></h1>
+
+
+
+
+
+
+
+
+<h3>Навигация</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="table_join.html">Присоединение к столу</a></li>
+<li class="toctree-l1"><a class="reference internal" href="game_start.html">Старт игры</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Ход игрока</a></li>
+<li class="toctree-l1"><a class="reference internal" href="game_end.html">Конец игры</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="game_start.html" title="предыдущая глава">Старт игры</a></li>
+      <li>Next: <a href="game_end.html" title="следующая глава">Конец игры</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Igor Kolobov.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/content/game_move.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
