@@ -33,8 +33,6 @@ Poker
 
 .. literalinclude:: code/game_move_ans.json
 
-    
-
 Все игроки ходят по кругу.
 
 Если игрок сбросил карты **flop**, то в ответе от сервера в **data.players** его уже не будет. Информация по нему будет только в инфе о ходе предыдущего игрока **data.game.prevMove**.
@@ -43,9 +41,11 @@ Poker
 
     * выкладываются новые карты на стол **data.board.cards**
     * фишки текущего этапа **data.bank.current** добавляются в общий банк **data.bank.total**
-    * задаётся флаг о смене этапа игры **data.game.isChangedStage**
+    * задаётся флаг о смене этапа игры **data.game.is_changed_stage**
 
-Если в ответе есть **data.game.isFinish**, то данный ход был последним.
+Если в ответе есть **data.game.is_finish**, то данный ход был последним.
+
+Тип **#card#** - строка вида "мастьзначение" (например, "CJ" / "H5" / "S10" / "DK").
 
 Конец игры
 ====================================
@@ -56,3 +56,15 @@ Poker
 
 .. literalinclude:: code/game_end.json
 
+**Вариант поля "combination_type":**
+
+    * ROYAL_FLUSH = 10;
+    * STRAIGHT_FLUSH = 9;
+    * FOUR_OF_A_KIND = 8;
+    * FULL_HOUSE = 7;
+    * FLUSH = 6;
+    * STRAIGHT = 5;
+    * THREE_OF_A_KIND = 4;
+    * TWO_PAIR = 3;
+    * PAIR = 2;
+    * HIGH_CARD = 1;
