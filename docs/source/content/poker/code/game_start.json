@@ -2,46 +2,52 @@
     "move": 1, // номер текущего хода
     "data": {
         "bank": {
-            "total": 15, // общая ставка за все ходы
-            "current": 15 // ставка за текущий этап игры
+            "total": "#int#", // общая ставка за все ходы
+            "current": "#int#" // ставка за текущий этап игры
         },
         "players": [
             {
                 "user": {
-                    "id": 345345,
-                    "chips": 50000, // всего фишек у данного пользователя в игре
-                    "place": 0 // место за столом
+                    "id": "#user_id#",
+                    "chips": "#int#", // всего фишек у данного пользователя в игре
+                    "place": "#smallint#" // место за столом
                 },
                 "game": {
-                    "bet": 0, // ставка игрока за данный этап игры
-                    "isDealer": true // (* указывается только если) пользователь является дилером в данной игре
+                    "bet": "#int#", // ставка игрока за данный этап игры
+                    "is_dealer": "#bool#", // пользователь является дилером в данной игре
+                    "is_small_blind": "#bool#", // пользователь сделал small blind
+                    "is_big_blind": "#bool#" // пользователь сделал big blind
                 }
             },
             {
                 "user": {
-                    "id": 456455,
-                    "chips": 38000,
-                    "place": 1
+                    "id": "#user_id#",
+                    "chips": "#int#",
+                    "place": "#smallint#"
                 },
                 "game": {
-                    "bet": 5,
-                    "isSmallBlind": true // (* указывается только если) пользователь сделал small blind
+                    "bet": "#int#",
+                    "is_dealer": "#bool#",
+                    "is_small_blind": "#bool#",
+                    "is_big_blind": "#bool#"
                 }
             },
             {
                 "user": {
-                    "id": 145344,
-                    "chips": 43000,
-                    "place": 2
+                    "id": "#user_id#",
+                    "chips": "#int#",
+                    "place": "#smallint#"
                 },
                 "game": {
-                    "bet": 10,
-                    "isBigBlind": true // (* указывается только если) пользователь сделал big blind
+                    "bet": "#int#",
+                    "is_dealer": "#bool#",
+                    "is_small_blind": "#bool#",
+                    "is_big_blind": "#bool#"
                 }
             }
         ],
         "game": {
-            "move": 345345 // id пользователя, чей ход следующий
+            "move": "#user_id#" // id пользователя, чей ход следующий
         }
     }
 }
