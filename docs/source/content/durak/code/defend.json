@@ -1,0 +1,16 @@
+{
+    "move": "#int#", // номер текущего хода
+    "data": {
+        "type": "defend",
+        "cards": [
+            {
+                "bottom_card": "#string#", // карта на столе, которую нужно "покрыть"
+                "card": "#string#" // карта, которой "кроем"
+            },
+            {
+                "bottom_card": "#string#",
+                "card": "#string#"
+            }
+        ]
+    }
+}
