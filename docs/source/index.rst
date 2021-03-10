@@ -8,5 +8,6 @@ MGames
 
    content/poker/index
    content/durak/index
+   content/pref/index
 
 
