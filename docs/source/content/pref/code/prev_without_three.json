@@ -1,0 +1,4 @@
+{
+    "type": "without_three", // тип хода
+    "player_id": "#int#" // id пользователя, кто ходил
+}
