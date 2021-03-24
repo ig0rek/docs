@@ -40,47 +40,52 @@ Preferans
 
 Работает как для выбора контракта, так и при выборе виста
 
-.. literalinclude:: code/pass.json
+.. literalinclude:: code/move/pass.json
 
 Сделать ставку.
 ------------------------------------
 
-.. literalinclude:: code/bet.json
+.. literalinclude:: code/move/bet.json
 
 Мизер.
 ------------------------------------
 
-.. literalinclude:: code/misere.json
+.. literalinclude:: code/move/misere.json
 
 Мизер без прикупа.
 ------------------------------------
 
-.. literalinclude:: code/misere_wt.json
+.. literalinclude:: code/move/misere_wt.json
+
+Вист.
+------------------------------------
+
+.. literalinclude:: code/move/whist.json
 
 Полувист.
 ------------------------------------
 
-.. literalinclude:: code/whist_half.json
+.. literalinclude:: code/move/whist_half.json
 
 Выбор типа виста.
 ------------------------------------
 
-.. literalinclude:: code/whist_type.json
+.. literalinclude:: code/move/whist_type.json
 
 Скинуть две карты.
 ------------------------------------
 
-.. literalinclude:: code/drop.json
+.. literalinclude:: code/move/drop.json
 
 Без трёх.
 ------------------------------------
 
-.. literalinclude:: code/without_three.json
+.. literalinclude:: code/move/without_three.json
 
 Кинуть карту.
 ------------------------------------
 
-.. literalinclude:: code/throw.json
+.. literalinclude:: code/move/throw.json
 
 **Структура ответа**
 
@@ -112,27 +117,27 @@ Preferans
 
 Ставка:
 
-.. literalinclude:: code/contract_bet.json
+.. literalinclude:: code/contract/bet.json
 
 Мизер:
 
-.. literalinclude:: code/contract_misere.json
+.. literalinclude:: code/contract/misere.json
 
 Мизер без прикупа:
 
-.. literalinclude:: code/contract_misere_wt.json
+.. literalinclude:: code/contract/misere_wt.json
 
 Пасс:
 
-.. literalinclude:: code/contract_pass.json
+.. literalinclude:: code/contract/pass.json
 
 Вист:
 
-.. literalinclude:: code/contract_whist.json
+.. literalinclude:: code/contract/whist.json
 
 Полвиста:
 
-.. literalinclude:: code/contract_whist_half.json
+.. literalinclude:: code/contract/whist_half.json
 
 Взятка
 ------------------------------------
@@ -155,52 +160,52 @@ Preferans
 Сделал пас
 ------------------------------------
 
-.. literalinclude:: code/prev_pass.json
+.. literalinclude:: code/move_prev/pass.json
 
 Сделал ставку
 ------------------------------------
 
-.. literalinclude:: code/prev_bet.json
+.. literalinclude:: code/move_prev/bet.json
 
 Мизер
 ------------------------------------
 
-.. literalinclude:: code/prev_misere.json
+.. literalinclude:: code/move_prev/misere.json
 
 Мизер без прикупа
 ------------------------------------
 
-.. literalinclude:: code/prev_misere_wt.json
+.. literalinclude:: code/move_prev/misere_wt.json
 
 Вист
 ------------------------------------
 
-.. literalinclude:: code/prev_whist.json
+.. literalinclude:: code/move_prev/whist.json
 
 Полувист
 ------------------------------------
 
-.. literalinclude:: code/prev_whist_half.json
+.. literalinclude:: code/move_prev/whist_half.json
 
 Выбрал тип виста
 ------------------------------------
 
-.. literalinclude:: code/prev_whist_type.json
+.. literalinclude:: code/move_prev/whist_type.json
 
 Скинул две карты
 ------------------------------------
 
-.. literalinclude:: code/prev_drop.json
+.. literalinclude:: code/move_prev/drop.json
 
 Выбрал "без трёх"
 ------------------------------------
 
-.. literalinclude:: code/prev_without_three.json
+.. literalinclude:: code/move_prev/without_three.json
 
 Кинул карту
 ------------------------------------
 
-.. literalinclude:: code/prev_throw.json
+.. literalinclude:: code/move_prev/throw.json
 
 В конце каждого хода игрока, прилетит событие "game.player.move", внутри - список карт на руке (структура аналогична "game.player.start").
 
