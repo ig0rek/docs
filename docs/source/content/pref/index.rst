@@ -215,7 +215,55 @@ Preferans
 
 Сервер присылает возможные варианты хода следующего игрока.
 
-TODO: структура будет похожа на "вариант хода" / "предыдущий ход"
+Может сделать пас
+------------------------------------
+
+.. literalinclude:: code/move_next/pass.json
+
+Может сделать ставку
+------------------------------------
+
+.. literalinclude:: code/move_next/bet.json
+
+Мизер
+------------------------------------
+
+.. literalinclude:: code/move_next/misere.json
+
+Мизер без прикупа
+------------------------------------
+
+.. literalinclude:: code/move_prev/misere_wt.json
+
+Вист
+------------------------------------
+
+.. literalinclude:: code/move_next/whist.json
+
+Полувист
+------------------------------------
+
+.. literalinclude:: code/move_next/whist_half.json
+
+Выбрать тип виста
+------------------------------------
+
+.. literalinclude:: code/move_next/whist_type.json
+
+Скинуть две карты
+------------------------------------
+
+.. literalinclude:: code/move_next/drop.json
+
+Выбрать "без трёх"
+------------------------------------
+
+.. literalinclude:: code/move_next/without_three.json
+
+Кинуть карту
+------------------------------------
+
+.. literalinclude:: code/move_next/throw.json
 
 **Игрок заявляет о своей победе**
 
